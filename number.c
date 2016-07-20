@@ -57,6 +57,7 @@ int main(){
 	}
 
 	printf("How many numbers in the case? = %d\n",sizeof(a));
+	printf("How many numbers in the case? = %d\n",sizeof(a));
 	printf("Increment(1) or Decreasoing(2)?\n");
 	scanf ("%d",&c);
 	if(c==1){
