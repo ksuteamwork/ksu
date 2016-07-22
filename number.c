@@ -36,14 +36,14 @@ int main(){
 //	int a[5];
 	char buffer[10];
 	int c,i=0,e;
-	int *a,*b
+	int a[5];
 /*		fd = open("/home/whitestone/num.txt",O_RDONLY);
 
 		size = read(fd,buffer,sizeof(a));
 		close(fd);*/
 
 	FILE *fp = fopen("num.txt","r");
-
+        FILE *fb = fopen("num2.txt","w");
 	memset(a,0,sizeof(a));
 
 	if(fp){
@@ -57,19 +57,20 @@ int main(){
 	}
 
 	printf("How many numbers in the case? = %d\n",sizeof(a));
-	printf("How many numbers in the case? = %d\n",sizeof(a));
 	printf("Increment(1) or Decreasoing(2)?\n");
 	scanf ("%d",&c);
 	if(c==1){
 		sort(a, 5);
-		for(int i = 0;i < 5;i++)
-		printf(" %d\n", a[i]);
+		for(int i = 0;i < 5;i++){
+                fprintf(fb,"%d\n",a[i]);
+		printf(" %d\n", a[i]);}
 }
 
 	if(c==2){
 	btos(a, 5);
-		for(int i = 0;i < 5;i++)
-		printf(" %d\n", a[i]);
+		for(int i = 0;i < 5;i++){
+                 fprintf(fb,"%d\n",a[i]);
+		printf(" %d\n", a[i]);}
 }
 //	FILE *fp = fopen("num.txt","w");
 //		fputs(a ,fp);
@@ -77,7 +78,7 @@ int main(){
 		/*fd = open("/home/whitestone/num.txt",O_WRONLY);
 		write(fd,sizeof(a));
 		close(fd);*/
-
+        fclose(fb);
 	fclose(fp);
 }
 }
