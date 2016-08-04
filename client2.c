@@ -18,14 +18,14 @@ int main(){
 	int s;
 	struct sockaddr_in addr;
 	char buffer[1024];
-	char var[]="GET /1.txt HTTP/1.1\r\n"
+	char var[]="GET /2.txt HTTP/1.1\r\n"
 		   "User-Agent:Wget/1.15.1(linux-gnu)\r\n"
 		   "Accept:*/*\r\n"
 		   "Accept-Encoding: indentity\r\n"
 		   "Host: 192.168.128.65\r\n"
 		   "Cpnnection: Keep-Alive\r\n\r\n";
 
-	//FILE*fb=fopen("ac.txt","w");
+	FILE*fb=fopen("ac.txt","w");
 
 	if((s = socket(AF_INET, SOCK_STREAM, 0))<0){
 		perror("socket");
@@ -45,7 +45,13 @@ int main(){
 	sprintf(buffer,"%s" ,var);
 	write(s, buffer,sizeof(buffer));
 	bzero(buffer, sizeof(buffer));
-	recv(s, buffer, sizeof(buffer), 0);
-	printf("%s\n", buffer);
+	//recv(s, buffer, sizeof(buffer), 0);
+	//printf("%s\n", buffer);
 
+	int len = recv(s,buffer,sizeof(buffer),0);
+	while(len < sizeof(buffer)){
+	recv(s,buffer,sizeof(buffer),0);
+	//printf("%s\n",buffer);
+	fprintf(fb,"%s\n",buffer);
+	}
 }
