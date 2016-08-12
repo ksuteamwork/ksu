@@ -43,7 +43,7 @@ int main(){
 	}
 
 	sprintf(buffer,"%s" ,var);
-        rite(s, buffer,sizeof(buffer));
+        write(s, buffer,sizeof(buffer));
 	bzero(buffer, sizeof(buffer));
 
 	recv(s, buffer, sizeof(buffer), 0);
