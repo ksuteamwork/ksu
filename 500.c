@@ -3,9 +3,12 @@
 
 int main(){
 
-int i,j,a[2048],N=500;
+int i,j,a[1024],N;
 memset(a,0,sizeof(a));
 a[0]=1;
+
+	scanf("%d", &N);
+
 	for(i=1;i<=N;i++){
 		for(j=0;j<sizeof(a)/sizeof(a[0]);j++){
 			a[j] *= i;
