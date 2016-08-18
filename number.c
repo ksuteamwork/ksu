@@ -67,9 +67,9 @@ int main(){
 }
 
 	if(c==2){
-	btos(a, 5);
+		btos(a, 5);
 		for(int i = 0;i < 5;i++){
-                 fprintf(fb,"%d\n",a[i]);
+                fprintf(fb,"%d\n",a[i]);
 		printf(" %d\n", a[i]);}
 }
 //	FILE *fp = fopen("num.txt","w");

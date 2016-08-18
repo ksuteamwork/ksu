@@ -29,9 +29,11 @@ int main(int argc,char*argv[]){
 
 	bzero(&addr,sizeof(addr));
 	addr.sin_family = AF_INET;
+
 	ch = getopt(argc, argv,"i:");
 	a = sscanf(optarg,"%hu",&ip);
 	addr.sin_addr.s_addr = inet_addr(optarg);
+
 	ch1 = getopt(argc,argv,"p:");
 	b = sscanf(optarg,"%hu",&port);
 	addr.sin_port = htons(atoi(optarg));
