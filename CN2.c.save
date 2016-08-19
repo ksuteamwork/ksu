@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+int a[]={1,4,9,12,20,6,7};
+int i,j,x,y,z,N;
+
+//scanf("%d\n",&N);
+//N = sizeof(a)/sizeof(int);
+
+	for(i=0;i<7;i++){
+		for(j=i+1;j<7;j++){
+		if(a[i]+a[j]==13)
+		printf("%d %d",a[i],a[j]);
+		else
+		printf("nothing\n");
+		}
+	}
+}
